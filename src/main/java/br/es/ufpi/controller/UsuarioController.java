@@ -13,7 +13,7 @@ public class UsuarioController {
   @Autowired
   private UsuarioRepository usuarioRepository;
 
-  @GetMapping("/")
+  @GetMapping("/novo")
   public String exibirFormulario(Model model) {
     model.addAttribute("usuario", new Usuario());
     return "formulario";
