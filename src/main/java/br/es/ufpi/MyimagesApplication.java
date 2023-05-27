@@ -22,9 +22,13 @@ public class MyimagesApplication extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
+		http.csrf().disable()
 			.authorizeRequests()
+				.antMatchers("/").permitAll()
 				.antMatchers("/login").permitAll() // Permite acesso à página de login
+				.antMatchers("/novo").permitAll()
+				.antMatchers("/salvar").permitAll()
+				.antMatchers("/listar").permitAll()
 				.antMatchers("/dashboard").authenticated() // Requer autenticação para acessar a página de dashboard
 				.and()
 			.formLogin()

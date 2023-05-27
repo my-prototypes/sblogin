@@ -13,6 +13,11 @@ public class UsuarioController {
   @Autowired
   private UsuarioRepository usuarioRepository;
 
+  @GetMapping("/")
+  public String ola(Model model){
+    return "index";
+  }
+
   @GetMapping("/novo")
   public String exibirFormulario(Model model) {
     model.addAttribute("usuario", new Usuario());
@@ -29,5 +34,10 @@ public class UsuarioController {
   public String listarUsuarios(Model model) {
     model.addAttribute("usuarios", usuarioRepository.findAll());
     return "listagem";
+  }
+
+  @GetMapping("/dashboard")
+  public String dashboard(Model model){
+    return "dashboard";
   }
 }

@@ -16,17 +16,17 @@ public class LoginController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @GetMapping("/")
+    @GetMapping("/login")
     public String exibirFormularioLogin() {
         return "login";
     }
 
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model) {
-        Usuario usuario = usuarioService.findByNomeUsuario(username);
+        //Usuario usuario = usuarioService.findByNomeUsuario(username);
         if (username.equals("admin")){
         //if (usuario != null && usuario.getSenha().equals(password)) {
-            model.addAttribute("usuario", usuario);
+            //model.addAttribute("usuario", usuario);
             return "dashboard";
         } else {
             model.addAttribute("error", "Credenciais inválidas");
