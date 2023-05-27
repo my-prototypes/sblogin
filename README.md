@@ -32,3 +32,10 @@ Rode os seguintes comando via maven:
 - mvn clean dependency:tree
 - mvn clean compile
 - mvn spring-boot:run
+
+# Compatibilidade entre as versões do java, maven e spring-boot
+A última versão estável foi testada com o JDK 17 e Spring-Boot 3.1.0
+
+Para o JDK 11, deve-se usar o Spring-Boot 2.5.2
+
+No caso de erro: "package jakarta.persistence does not exist" é preciso substituir o por javax.persistence

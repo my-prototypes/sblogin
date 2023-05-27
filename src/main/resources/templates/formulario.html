@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Cadastro de Usuário</h1>
-    <form action="/salvar" method="post" th:object="${usuario}">
-        <label for="nomeUsuario">Nome de Usuário:</label>
-        <input type="text" id="nomeUsuario" name="nomeUsuario" th:field="*{nomeUsuario}"/><br>
-        <label for="nomeCompleto">Nome Completo:</label>
-        <input type="text" id="nomeCompleto" name="nomeCompleto" th:field="*{nomeCompleto}"/><br>
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" th:field="*{email}"/><br>
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" th:field="*{senha}"/><br>
-        <input type="submit" value="Salvar">
-    </form>
+    <div class="container">
+        <h1>Cadastro de Usuário</h1>
+        <p th:text="'Hoje é ' + ${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}"></p>
+    </div>
+    <div>
+        <form action="/salvar" method="post" th:object="${usuario}">
+            <label for="nomeUsuario">Nome de Usuário:</label>
+            <input type="text" id="nomeUsuario" name="nomeUsuario" th:field="*{nomeUsuario}"/><br>
+            <label for="nomeCompleto">Nome Completo:</label>
+            <input type="text" id="nomeCompleto" name="nomeCompleto" th:field="*{nomeCompleto}"/><br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" th:field="*{email}"/><br>
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" th:field="*{senha}"/><br>
+            <input type="submit" value="Salvar">
+        </form>
+    </div>  
 </body>
 </html>

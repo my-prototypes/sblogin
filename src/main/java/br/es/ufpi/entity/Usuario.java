@@ -1,25 +1,20 @@
 package br.es.ufpi.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Access;
-import jakarta.persistence.AccessType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
-//@Access(AccessType.PROPERTY)
 public class Usuario {
     @Id
     @GeneratedValue
     private Long id;
-
     private String nomeUsuario;
-
     private String nomeCompleto;
-
     private String email;
-
     private String senha;
 
     public Usuario(){}
